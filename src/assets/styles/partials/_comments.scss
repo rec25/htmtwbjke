@@ -91,6 +91,8 @@ textarea.comment__value {
   border: none;
   border-radius: $border-radius;
   background-color: $color-buttercup;
+
+  cursor: pointer;
 }
 
 .comment__wrapper {
@@ -179,7 +181,8 @@ textarea.comment__value {
     position: relative;
 
     margin: 0 auto;
-    width: 182px;
+    padding: 5px 14px;
+    max-width: 200px;
     height: 40px;
 
     align-items: center;
