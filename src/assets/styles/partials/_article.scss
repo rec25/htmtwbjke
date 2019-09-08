@@ -45,8 +45,12 @@ article p {
 
 .article-info__list {
   display: flex;
+  margin-bottom: 35px;
   padding: 20px 0;
+
   align-items: center;
+  border-top: $divider-height solid $color-concrete;
+  border-bottom: $divider-height solid $color-concrete;
 }
 
 .article-info__item {

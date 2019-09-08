@@ -27,6 +27,6 @@ body {
 
 .divider {
   margin: 10px auto;
-  height: 2px;
+  height: $divider-height;
   background-color: $color-concrete;
 }
