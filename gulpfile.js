@@ -108,7 +108,7 @@ exports.default = series(
   look
 );
 
-exports.default = parallel(
+exports.build = parallel(
   fonts,
   images,
   scss,
