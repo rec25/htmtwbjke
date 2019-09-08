@@ -4,7 +4,13 @@
   "main": "gulpfile.js",
   "homepage": "https://github.com/npmjke/htmtwbjke#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp build",
+    "render": "gulp nunjucks",
+    "img": "gulp img",
+    "fonts": "gulp fonts",
+    "scss": "gulp scss",
+    "js": "gulp js"
   },
   "license": "ISC"
 }
