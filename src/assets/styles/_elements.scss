@@ -1,0 +1,20 @@
+body {
+  font-family: "Stag", Arial;
+  font-size: 17px;
+  color: $color-text;
+  background-color: $color-concrete;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  margin: -80px auto 0;
+  max-width: 940px;
+  background-color: $color-white;
+  box-shadow: 0 5px 15px rgba($color-black, 0.05);
+}

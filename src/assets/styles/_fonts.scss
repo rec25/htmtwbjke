@@ -1,14 +1,19 @@
-// @font-face {
-//   font-family: 'BrandonText';
-//   src: url('fonts/BrandonText-Regular.otf');
-// }
+$fontPath: "./fonts/stag";
 
-// @font-face {
-//   font-family: 'BrandonTextBold';
-//   src: url('fonts/BrandonText-Bold.otf');
-// }
+@mixin font-style($font-family, $font-style, $font-weight, $file-name) {
+  $path: "#{$fontPath}/#{$file-name}";
+  
+  @font-face {
+    font-family: $font-family;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url("#{$path}.otf");
+  }
+}
 
-// @font-face {
-//   font-family: 'Abril';
-//   src: local('Abril'), url('fonts/AbrilFatface-Regular.ttf') format('truetype');
-// }
+// font-weight bold
+@include font-style("Stag", normal, 700, "stag-bold");
+// font-weight medium
+@include font-style("Stag", normal, 500, "stag-medium");
+// font-weight regular
+@include font-style("Stag", normal, 400, "stag-book");

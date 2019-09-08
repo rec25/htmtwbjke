@@ -1,3 +1,11 @@
+// Greyscale
+$color-white: #fff;
+$color-concrete: #f2f2f2;
+$color-nobel: #b6b6b6;
+$color-tundora: #454545;
+$color-black: #000;
+
 // Colors
 $color-primary: #fff;
-$color-secondary: #000;
+$color-secondary: $color-nobel;
+$color-text: $color-tundora;
