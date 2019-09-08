@@ -1,6 +1,5 @@
 .article-title {
-  font-size: $fs-h1;
-  font-weight: 500;
+  @extend %h1;
 }
 
 .article-title__container {
@@ -49,8 +48,8 @@ article p {
   padding: 20px 0;
 
   align-items: center;
-  border-top: $divider-height solid $color-concrete;
-  border-bottom: $divider-height solid $color-concrete;
+  border-top: $border-size solid $border-color;
+  border-bottom: $border-size solid $border-color;
 }
 
 .article-info__item {

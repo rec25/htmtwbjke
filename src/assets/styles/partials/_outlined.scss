@@ -1,0 +1,182 @@
+.outlined {
+  position: relative;
+  display: flex;
+  padding-top: 6px;
+  font-size: 17px;
+  line-height: 25px;
+  overflow: hidden;
+}
+
+/* Input, Textarea */
+.outlined > input,
+.outlined > textarea {
+  box-sizing: border-box;
+  margin: 0;
+  border: solid $border-size; /* Safari */
+  border-color: $color-porcelain;
+  border-top-color: transparent;
+  border-radius: $border-radius;
+  padding: 15px;
+  width: 100%;
+  height: inherit;
+  color: $color-text;
+  background-color: $color-white;
+  box-shadow: none; /* Firefox */
+  font-size: 14px;
+  line-height: inherit;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.outlined > textarea {
+  height: $form-row-height;
+}
+
+/* Span */
+.outlined > input + span,
+.outlined > textarea + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  border-color: $color-porcelain;
+  width: 100%;
+  max-height: 100%;
+  color: $color-silver;
+  font-size: 14px;
+  line-height: 15px;
+  cursor: text;
+  transition: color 0.2s, font-size 0.2s, line-height 0.2s;
+}
+
+/* Corners */
+.outlined > input + span::before,
+.outlined > input + span::after,
+.outlined > textarea + span::before,
+.outlined > textarea + span::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  margin-top: 6px;
+  border-top: solid $border-size;
+  border-top-color: $color-porcelain;
+  min-width: 10px;
+  height: 8px;
+  pointer-events: none;
+  box-shadow: inset 0 1px transparent;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.outlined > input + span::before,
+.outlined > textarea + span::before {
+  margin-right: 4px;
+  border-radius: $border-radius 0;
+}
+
+.outlined > input + span::after,
+.outlined > textarea + span::after {
+  flex-grow: 1;
+  margin-left: 4px;
+  border-radius: 0 $border-radius;
+}
+
+/* Hover */
+// .outlined:hover > input,
+// .outlined:hover > textarea {
+//   border-color: rgba($color-moon, 0.87);
+//   border-top-color: transparent;
+// }
+
+// .outlined:hover > input + span::before,
+// .outlined:hover > textarea + span::before,
+// .outlined:hover > input + span::after,
+// .outlined:hover > textarea + span::after {
+//   border-top-color: rgba($color-moon, 0.87);
+// }
+
+// .outlined:hover > input:not(:focus):placeholder-shown,
+// .outlined:hover > textarea:not(:focus):placeholder-shown {
+//   border-color: rgba($color-moon, 0.87);
+// }
+
+/* Placeholder-shown */
+.outlined > input:not(:focus):placeholder-shown,
+.outlined > textarea:not(:focus):placeholder-shown {
+  border-top-color: $color-porcelain;
+}
+
+.outlined > input:not(:focus):placeholder-shown + span,
+.outlined > textarea:not(:focus):placeholder-shown + span {
+  font-size: 17px;
+  line-height: 64px;
+}
+
+.outlined > input:not(:focus):placeholder-shown + span::before,
+.outlined > textarea:not(:focus):placeholder-shown + span::before,
+.outlined > input:not(:focus):placeholder-shown + span::after,
+.outlined > textarea:not(:focus):placeholder-shown + span::after {
+  border-top-color: transparent;
+}
+
+/* Focus */
+.outlined > input:focus,
+.outlined > textarea:focus {
+  border-color: $color-azure;
+  border-top-color: transparent;
+  background-color: $color-airblue;
+  outline: none;
+}
+
+.outlined > input:focus + span,
+.outlined > textarea:focus + span {
+  color: $color-azure;
+}
+
+.outlined > input:focus + span::before,
+.outlined > input:focus + span::after,
+.outlined > textarea:focus + span::before,
+.outlined > textarea:focus + span::after {
+  border-top-color: $color-azure !important;
+}
+
+/* Disabled */
+.outlined > input:disabled + span,
+.outlined > textarea:disabled + span {
+  pointer-events: none;
+}
+
+/* Error */
+// .form-row--invalid .outlined > input,
+// .form-row--invalid .outlined > textarea {
+//   border-color: $color-grapefruit;
+//   border-top-color: transparent;
+//   background-color: $color-beige;
+// }
+
+// .form-row--invalid .outlined > input + span::before,
+// .form-row--invalid .outlined > input + span::after,
+// .form-row--invalid .outlined > textarea + span::before,
+// .form-row--invalid .outlined > textarea + span::after {
+//   border-top-color: $color-grapefruit !important;
+// }
+
+
+// .form-row--invalid .outlined > input:not(:focus):placeholder-shown,
+// .form-row--invalid .outlined > textarea:not(:focus):placeholder-shown {
+//   border-top-color: $color-grapefruit !important;
+// }
+
+/* Faster transition in Safari for less noticable fractional font-size issue */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+      .outlined > input,
+      .outlined > input + span,
+      .outlined > textarea,
+      .outlined > textarea + span,
+      .outlined > input + span::before,
+      .outlined > input + span::after,
+      .outlined > textarea + span::before,
+      .outlined > textarea + span::after {
+        transition-duration: 0.1s;
+      }
+  }
+}

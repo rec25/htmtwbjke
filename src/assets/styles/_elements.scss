@@ -1,8 +1,17 @@
-body {
+%h1 {
+  font-size: $fs-h1;
+  font-weight: 500;
+}
+
+%default-text {
   font-family: "Stag", Arial;
   font-size: 17px;
   line-height: 25px;
   color: $color-text;
+}
+
+body {
+  @extend %default-text;
   background-color: $color-concrete;
 
   strong {
@@ -28,5 +37,5 @@ body {
 .divider {
   margin: 10px auto;
   height: $divider-height;
-  background-color: $color-concrete;
+  background-color: $border-color;
 }

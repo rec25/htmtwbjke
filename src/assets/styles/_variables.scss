@@ -1,14 +1,24 @@
 // Greyscale
-$color-white: #fff;
-$color-concrete: #f2f2f2;
-$color-nobel: #b6b6b6;
+$color-white: #FFF;
+$color-concrete: #F2F2F2;
+$color-porcelain: #EBEDEE;
+$color-silver: #BFBFBF;
+$color-nobel: #B6B6B6;
 $color-tundora: #454545;
 $color-black: #000;
 
+// Blue 
+$color-azure: #1A91EB;
+$color-airblue: #EDF7FE;
+
+// Yellow 
+$color-buttercup: #F1C40F;
+
 // Colors
-$color-primary: #fff;
+$color-primary: #FFF;
 $color-secondary: $color-nobel;
 $color-text: $color-tundora;
+$border-color: $color-porcelain;
 
 // Elements
 $fs-h1: 30px;
@@ -16,3 +26,6 @@ $fs-h1: 30px;
 // Values
 $container-padding-horizontal: 80px;
 $divider-height: 2px;
+$border-radius: 6px;
+$border-size: 2px;
+$form-row-height: 86px;
