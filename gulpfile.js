@@ -3,6 +3,20 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const render = require('gulp-nunjucks-render');
 
+
+// Importing all the Gulp-related packages we want to use
+const sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
+const imagemin = require('gulp-imagemin');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const babelify = require('babelify');
+const buffer = require("vinyl-buffer");
+
 // Files paths
 const paths = {
   dist: 'dist',
@@ -70,7 +84,7 @@ const js = () => (
     .pipe(dest(dist.scripts))
 );
 
-const watch = () => {
+const look = () => {
   watch([files.styles, files.scripts, files.pages, files.partials],
     parallel(scss, js, nunjucks));
 }
@@ -91,7 +105,7 @@ exports.default = series(
     js,
     nunjucks,
   ),
-  watch
+  look
 );
 
 exports.default = parallel(
@@ -102,7 +116,7 @@ exports.default = parallel(
   nunjucks,
 );
 
-exports.render = nunjucksRender;
+exports.render = nunjucks;
 exports.js = js;
 exports.img = images;
 exports.fonts = fonts;
