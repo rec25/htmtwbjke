@@ -1,8 +1,13 @@
 body {
   font-family: "Stag", Arial;
   font-size: 17px;
+  line-height: 25px;
   color: $color-text;
   background-color: $color-concrete;
+
+  strong {
+    font-weight: 500;
+  }
 }
 
 .wrapper {
@@ -14,7 +19,14 @@ body {
 .container {
   position: relative;
   margin: -80px auto 0;
+  padding: 48px $container-padding-horizontal 60px;
   max-width: 940px;
   background-color: $color-white;
   box-shadow: 0 5px 15px rgba($color-black, 0.05);
+}
+
+.divider {
+  margin: 10px auto;
+  height: 2px;
+  background-color: $color-concrete;
 }
