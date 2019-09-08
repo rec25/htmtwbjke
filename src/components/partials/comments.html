@@ -1,19 +1,147 @@
 <div class="comments">
+
   <div class="leave-comment">
     <h2 class="comments__title">Leave comment</h2>
     <div class="comments__container">
       <div class="avatar__container">
         <img src="images/Avatar-1.png" alt="Avatar Image">
       </div>
+
       <form action="" id="leave-comment__form" class="comment__form">
         <fieldset class="comment__fieldset">
-          <label for="comment__value" class="outlined">
-            <textarea name="comment" id="comment__value" class="comment__value" placeholder=" "></textarea>
+          <label for="leave-comment__value" class="outlined">
+            <textarea name="comment" id="leave-comment__value" class="comment__value" placeholder=" "></textarea>
             <span>Your Message</span>
           </label>
           <button class="comment__submit submit-btn">Send</button>
         </fieldset>
       </form>
+
     </div>
+  </div>
+
+  <div class="divider divider-comments"></div>
+
+  <div class="comments__container">
+    <div class="avatar__container">
+      <img src="images/Avatar-1.png" alt="Avatar Image">
+    </div>
+    <div class="comment__wrapper">
+        
+      <div class="comment__list comment__info">
+        <div class="comment__item comment__author">Kurt Thompson</div>
+        <div class="comment__item posted">
+          <img src="images/Hourglass.svg" alt="Posted Time Icon">
+          <span><strong>2015-07-06</strong> at <strong>13:57</strong></span>
+        </div>
+      </div>
+
+      <p>If not everyone makes money blogging, why is blogging so popular?</p>
+
+      <div class="comment__list comment__handle">
+        <div class="comment__item edit">
+          <img src="images/Edit.svg" alt="Edit Icon">
+          <span>Edit</span>
+        </div>
+        <div class="comment__item delete">
+          <img src="images/Times.svg" alt="Delete Icon">
+          <span>Delete</span>
+        </div>
+        <div class="comment__item delete">
+          <img src="images/Reply.svg" alt="Reply Icon">
+          <span>Reply</span>
+        </div>
+      </div>
+
+      <div class="comment__list comment__interrupt">
+        <div class="comment__item share">
+          <img src="images/Share.svg" alt="Share Icon">
+          <span>Kurt Thompson</span>
+        </div>
+        <div class="comment__item cancel">
+          <img src="images/Times.svg" alt="Cancel Icon">
+          <span>Cancel</span>
+        </div>
+      </div>
+
+      <form action="" id="leave-comment__form" class="comment__form">
+        <fieldset class="comment__fieldset">
+          <label for="reply-to-id" class="outlined">
+            <textarea name="comment" id="reply-to-id" class="comment__value" placeholder=" "></textarea>
+            <span>Your Message</span>
+          </label>
+          <button class="comment__submit submit-btn">Send</button>
+        </fieldset>
+      </form>
+
+      <div class="replies">
+
+        <div class="comments__container">
+          <div class="avatar__container ">
+            <img src="images/Avatar-2.png" alt="Avatar Image">
+          </div>
+          <div class="commets__wrapper">
+            <div class="comment__list comment__info">
+              <div class="comment__item comment__author">Sarah Fleming</div>
+              <div class="comment__item posted">
+                <img src="images/Share.svg" alt="Share Icon">
+                <span>Kurt Thompson</span>
+              </div>
+              <div class="comment__item posted">
+                <img src="images/Hourglass.svg" alt="Posted Time Icon">
+                <span><strong>2015-07-06</strong> at <strong>13:57</strong></span>
+              </div>
+            </div>
+            <p>A WordPress blog will stand out!</p>
+          </div>
+        </div>
+
+        <div class="comments__container">
+          <div class="avatar__container ">
+            <img src="images/Avatar-3.png" alt="Avatar Image">
+          </div>
+          <div class="commets__wrapper">
+            <div class="comment__list comment__info">
+              <div class="comment__item comment__author">Purificacion Rojas</div>
+              <div class="comment__item posted">
+                <img src="images/Share.svg" alt="Share Icon">
+                <span>Kurt Thompson</span>
+              </div>
+              <div class="comment__item posted">
+                <img src="images/Hourglass.svg" alt="Posted Time Icon">
+                <span><strong>2015-07-06</strong> at <strong>13:57</strong></span>
+              </div>
+            </div>
+            <p>The possibilities of designing a site with WordPress are immense indeed.</p>
+          </div>
+        </div>
+
+        <div class="comments__container">
+          <div class="avatar__container ">
+            <img src="images/Avatar-3.png" alt="Avatar Image">
+          </div>
+          <div class="commets__wrapper">
+            <div class="comment__list comment__info">
+              <div class="comment__item comment__author">Phillip Lynch</div>
+              <div class="comment__item posted">
+                <img src="images/Share.svg" alt="Share Icon">
+                <span>Kurt Thompson</span>
+              </div>
+              <div class="comment__item posted">
+                <img src="images/Hourglass.svg" alt="Posted Time Icon">
+                <span><strong>2015-07-06</strong> at <strong>13:57</strong></span>
+              </div>
+            </div>
+            <p>Anyone can blog but it takes a WordPress user to be awesome!</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="comments__load">
+    <button id="load-more-comments">Load more comments</button>
   </div>
 </div>

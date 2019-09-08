@@ -63,9 +63,7 @@ article p {
 }
 
 .article-info__icon {
-  margin-right: 4px;
-  max-height: 15px;
-  width: auto;
+  @extend %icon;
 }
 
 .article-info__description {

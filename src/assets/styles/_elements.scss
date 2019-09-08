@@ -10,6 +10,13 @@
   color: $color-text;
 }
 
+%icon {
+  margin-right: 5px;
+  width: auto;
+  max-height: 15px;
+  height: 100%;
+}
+
 body {
   @extend %default-text;
   background-color: $color-concrete;
@@ -38,4 +45,8 @@ body {
   margin: 10px auto;
   height: $divider-height;
   background-color: $border-color;
+
+  &-comments {
+    margin: 10px auto 40px;
+  }
 }
