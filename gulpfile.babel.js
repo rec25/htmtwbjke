@@ -1,21 +1,22 @@
 // Initialize modules
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
-const { src, dest, watch, series, parallel } = require('gulp');
-const render = require('gulp-nunjucks-render');
-
+import { src, dest, watch, series, parallel } from 'gulp';
+import render from 'gulp-nunjucks-render';
 
 // Importing all the Gulp-related packages we want to use
-const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
-const postcss = require('gulp-postcss');
-const imagemin = require('gulp-imagemin');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
-const babelify = require('babelify');
-const buffer = require("vinyl-buffer");
+import sourcemaps from 'gulp-sourcemaps';
+import sass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import rename from 'gulp-rename';
+import imagemin from 'gulp-imagemin';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import browserify from 'browserify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import uglify from 'gulp-uglify';
+import glob from 'glob';
 
 // Files paths
 const paths = {
@@ -70,19 +71,26 @@ const images = () => (
     .pipe(dest(dist.images))
 );
 
-const js = () => (
-  browserify([
-    `${paths.scripts}/index.js`,
-  ])
-    .transform(babelify.configure({ presets : ["es2015"] }))
-    .bundle()
-    .pipe(source('index.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
-    .pipe(dest(dist.scripts))
-);
+const js = (done) => {
+  glob(files.scripts, (error, files) => {
+    if (error) { done(error) }
+
+    files.map(entry => (
+      browserify({ entries: [entry] })
+        .transform(babelify, { presets: ['@babel/env'] })
+        .bundle()
+        .pipe(source(entry))
+        .pipe(rename({ extname: '.min.js' }))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(dist.scripts))
+    ));
+
+    done();
+  })
+};
 
 const look = () => {
   watch([files.styles, files.scripts, files.pages, files.partials],
