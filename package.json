@@ -21,7 +21,8 @@
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
