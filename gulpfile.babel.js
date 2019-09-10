@@ -17,6 +17,7 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import uglify from 'gulp-uglify';
 import glob from 'glob';
+import flatten from 'gulp-flatten'
 
 // Files paths
 const paths = {
@@ -85,6 +86,7 @@ const js = (done) => {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
+        .pipe(flatten())
         .pipe(dest(dist.scripts))
     ));
 
